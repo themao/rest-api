@@ -19,3 +19,11 @@ GET:
 
     curl -X GET http://localhost/api/useless
     curl -X GET http://localhost/api/useless/1
+
+PATCH:
+
+    curl -X PATCH -H "Content-Type: application/json" -d '{"meh":"meh","whatever":"whatever"}' http://localhost/api/useless/1
+
+DELETE:
+
+    curl -X DELETE http://localhost/api/useless/1
