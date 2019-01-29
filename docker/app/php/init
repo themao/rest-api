@@ -1,4 +1,0 @@
-#!/bin/bash
-
-composer install --no-interaction --no-suggest
-bin/console doctrine:migrations:migrate --no-interaction
