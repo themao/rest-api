@@ -12,3 +12,5 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 050955361d6a788c46677490aa385e58e199c98c
+    fixier_api_endpoint: http://data.fixer.io
+    fixier_api_key: replaceme

@@ -12,4 +12,7 @@ PHP - you can just run it with `bin/console server:run`)
 
 ## To test the exchange rate endpoint:
 
-    curl -X POST -H "Content-Type: application/json" -d '{"meh":"value1","whatever":"value2"}' http://localhost/api/cart/exchange
+    curl -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"items":{"42":{"currency":"EUR","price":49.99,"quantity":1},"55":{"currency":"USD","price":12,"quantity":3}},"checkoutCurrency":"EUR"}' \
+    http://localhost/api/cart/exchange

@@ -26,6 +26,8 @@ services:
     build:
       context: .
       dockerfile: docker/app/php/Dockerfile
+      args:
+        DEBUG_IP: $DEBUG_IP
     env_file:
       - .env
     ports:
