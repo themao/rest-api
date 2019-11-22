@@ -6,13 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
-    public function testIndex()
+    public function testCurrencyExchange()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $inputJson = '{"items":{"42":{"currency":"EUR","price":49.99,"quantity":1},"55":{"currency":"USD","price":12,'
+            .'"quantity":3}},"checkoutCurrency":"EUR"}';
+        $client->request('POST', '/api/cart/exchange', [], [], [], $inputJson);
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Welcome to Symfony', $crawler->filter('#container h1')->text());
+        $this->assertFalse($client->getResponse()->isEmpty());
     }
 }

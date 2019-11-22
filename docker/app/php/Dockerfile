@@ -15,7 +15,7 @@ RUN pecl install apcu apcu_bc xdebug && \
 
 COPY docker/app/php/docker-php-ext-xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 RUN sed -i -e "s/{{DEBUG_IP}}/$(echo $DEBUG_IP)/g" /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-RUN echo $DEBUG_IP
+
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
